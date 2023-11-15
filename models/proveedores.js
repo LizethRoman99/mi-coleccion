@@ -2,10 +2,16 @@ const{Shema, model}= require('mongoose')
 
 const ProveedorShema=({
 
+    id:{
+        type:Number,
+        unique: true,
+        required: true,
+    },
+
     nombreProveedor: {
         type: String,
         required: true,
-        unique: true,
+        
     },
     nit: {
         type: Number,
@@ -19,10 +25,12 @@ const ProveedorShema=({
     nombreContacto: {
         type: String,
         required: true,
+
     },
     numeroContacto: {
         type: String,
         required: true,
+
     },
     estado:{
         type:Boolean,

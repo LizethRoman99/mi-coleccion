@@ -8,7 +8,7 @@ class Server{
     constructor(){
         this.app = express()
         this.port= process.env.PORT
-        this.hurtoPath ='/hurto'//Ruta de la api
+        this.proveedoresPath ='/proveedores'//Ruta de la api
         this.routes()
         this.conectarDB()
        
@@ -24,7 +24,7 @@ listen(){
 }
 
 routes(){
-    this.app.use(this.hurtoPath, require('../routes/hurto'))
+    this.app.use(this.proveedoresPath, require('../routes/proveedores'))
    }
    async conectarDB(){
      await dbConection()

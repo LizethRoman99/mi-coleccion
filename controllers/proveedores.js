@@ -1,14 +1,14 @@
 const  {response} =require('express');
-const asyc=  requiere('hbs/lib/async')
 
-Hurto = require('../models/proveedores')
+
+Proveedor = require('../models/proveedores')
 
 const getProveedores = async(req, res) =>{
 
 
     const proveedores = await Proveedor.find();//obteniendo los datos de la coleccion
      res.json({
-        msg: hurtos
+        msg: proveedores
      })
 
 }
@@ -34,10 +34,11 @@ const postProveedores = async(req, res) => {
 
 
 const putProveedores = async(req, res) =>{
+    const {id,nombreProveedor,nit,correo,nombreContacto,numeroContacto,estado}=req.query //desestructurar
 
 try{
-        const proveedor = await Proveedor.findOneAndUpdate({nombreProveedor:nombreProveedor},{nit:nit,correo:correo,nombreContacto:nombreContacto,numeroContacto:numeroContacto,estado:estado})//las primeras llaves son el valor por el cual voy a hacer la modificacion el segundo hace referencia a lo que el usuario envio
-        const { nombreProveedor,nit,correo,nombreContacto,numeroContacto,estado}=req.query //desestructurar
+        const proveedor = await Proveedor.findOneAndUpdate({id:id},{nombreProveedor:nombreProveedor,nit:nit,correo:correo,nombreContacto:nombreContacto,numeroContacto:numeroContacto,estado:estado})//las primeras llaves son el valor por el cual voy a hacer la modificacion el segundo hace referencia a lo que el usuario envio
+       
         mensaje = 'actualizacion exitosa'
         
     }catch(error){
@@ -50,9 +51,10 @@ try{
 }
    const deleteProveedores = async(req, res) =>{
 
+    const { id}=req.query //desestructurar
+
     try{
-            const proveedor = await Proveedor.findOneAndUpdate({nombreProveedor:nombreProveedor})//las primeras llaves son el valor por el cual voy a hacer la modificacion el segundo hace referencia a lo que el usuario envio
-            const { nombreProveedor,nit,correo,nombreContacto,numeroContacto,estado}=req.query //desestructurar
+            const proveedor = await proveedor.findOneAndDelete({id:id})//las primeras llaves son el valor por el cual voy a hacer la modificacion el segundo hace referencia a lo que el usuario envio
             mensaje = 'Eliminacion Exitosa'
             
         }catch(error){
