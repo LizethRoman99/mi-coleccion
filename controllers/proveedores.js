@@ -54,7 +54,7 @@ try{
     const { id}=req.query //desestructurar
 
     try{
-            const proveedor = await proveedor.findOneAndDelete({id:id})//las primeras llaves son el valor por el cual voy a hacer la modificacion el segundo hace referencia a lo que el usuario envio
+            const proveedor = await Proveedor.findOneAndDelete({id:id})//las primeras llaves son el valor por el cual voy a hacer la modificacion el segundo hace referencia a lo que el usuario envio
             mensaje = 'Eliminacion Exitosa'
             
         }catch(error){
