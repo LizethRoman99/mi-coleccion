@@ -8,7 +8,10 @@ class Server{
     constructor(){
         this.app = express()
         this.port= process.env.PORT
-        this.proveedoresPath ='/proveedores'//Ruta de la api
+        this.proveedoresPath ='/proveedores'
+        this.empleadosPath ='/empleados'//Ruta de la api
+        this.fichaTecnicaPath = '/fichaTecnica';//Ruta de la api
+
         this.routes()
         this.conectarDB()
        
@@ -24,7 +27,9 @@ listen(){
 }
 
 routes(){
-    this.app.use(this.proveedoresPath, require('../routes/proveedores'))
+    this.app.use(this.proveedoresPath, require('../routes/proveedores'));
+    this.app.use(this.empleadosPath, require('../routes/empleados'));
+    this.app.use(this.fichaTecnicaPath, require('../routes/fichaTecnica'));
    }
    async conectarDB(){
      await dbConection()
