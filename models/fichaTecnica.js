@@ -33,6 +33,16 @@ const FichaShema=({
       insumo: {
         type: String,
         required: true,
+        enum:['tela','algodon','hilo','botones'],
+      },
+      imagen: {
+        type: String,
+        required: true,
+      },
+      color:{
+        type:String,
+        required: true,
+        enum:['azul','amarillo','rojo',],
       },
       cantidadInsumo: {
         type: Number,
