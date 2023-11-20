@@ -1,5 +1,7 @@
 const express = require('express')
+const cors =require('cors');//implementar seguridad
 const { dbConection } = require('../database/config')
+
 
 //crear array
 
@@ -11,7 +13,7 @@ class Server{
         this.proveedoresPath ='/proveedores'
         this.empleadosPath ='/empleados'//Ruta de la api
         this.fichaTecnicaPath = '/fichaTecnica';//Ruta de la api
-
+        this.middelwares()
         this.routes()
         this.conectarDB()
        
@@ -31,6 +33,12 @@ routes(){
     this.app.use(this.empleadosPath, require('../routes/empleados'));
     this.app.use(this.fichaTecnicaPath, require('../routes/fichaTecnica'));
    }
+
+   middelwares(){
+    this.app.use( cors());
+   }
+
+
    async conectarDB(){
      await dbConection()
 
