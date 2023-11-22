@@ -33,7 +33,7 @@ const FichaShema=({
       insumo: {
         type: String,
         required: true,
-        enum:['tela','algodon','hilo','botones'],
+        enum:['tela','algodon','hilo','botones',''],
       },
       imagen: {
         type: String,

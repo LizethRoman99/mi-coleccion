@@ -13,7 +13,7 @@ const getEmpleados = async(req, res) =>{
 
 }
 const postEmpleados = async(req, res) => {
-    const datos= req.query //capturar datos de la url de postman
+    const datos= req.body //capturar datos de la url de postman//se cambio de query a body
     let mensaje='Insercion exitosa'
     try{
         const empleado = new Empleado(datos)//instaciar el objeto

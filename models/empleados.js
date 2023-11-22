@@ -48,7 +48,8 @@ const EmpleadoShema=({
       },
       fechaContratacion: {
         type: Date,
-        required: true,
+        default:Date.now
+
       },
       fechaTerminacion: {
         type: Date,

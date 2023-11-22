@@ -1,6 +1,8 @@
 const express = require('express')
 const cors =require('cors');//implementar seguridad
+const bodyParser = require('body-parser')// paquete convertir objeto enviado desde el formulario
 const { dbConection } = require('../database/config')
+
 
 
 //crear array
@@ -34,8 +36,9 @@ routes(){
     this.app.use(this.fichaTecnicaPath, require('../routes/fichaTecnica'));
    }
 
-   middelwares(){
+   middelwares(){//es un puente entre el fronend y backend
     this.app.use( cors());
+    this.app.use( bodyParser.json())//parsiar objetos a nsertar en la db
    }
 
 
