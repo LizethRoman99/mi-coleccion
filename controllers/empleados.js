@@ -34,7 +34,7 @@ const postEmpleados = async(req, res) => {
 
 
 const putEmpleados = async(req, res) =>{
-    const {id,nombreCompleto,Documento,celular,contraseña,confirmacionContraseña,seguridadSocial,fechaNacimiento,fechaContratacion,fechaTerminacion,correo}=req.query //desestructurar
+    const {id,nombreCompleto,Documento,celular,contraseña,confirmacionContraseña,seguridadSocial,fechaNacimiento,fechaContratacion,fechaTerminacion,correo}=req.body //desestructurar
 
 try{
         const empleado = await Empleado.findOneAndUpdate({id:id},{nombreCompleto:nombreCompleto,Documento:Documento,celular:celular,contraseña:contraseña,confirmacionContraseña:confirmacionContraseña,seguridadSocial:seguridadSocial,fechaNacimiento:fechaNacimiento,fechaContratacion:fechaContratacion,fechaTerminacion:fechaTerminacion,correo:correo})//las primeras llaves son el valor por el cual voy a hacer la modificacion el segundo hace referencia a lo que el usuario envio

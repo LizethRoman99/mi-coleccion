@@ -17,7 +17,10 @@ const ProveedorShema=({
         type: Number,
         required: true,
     },
-   
+    direccion: {
+        type: String,
+        required: true,
+    },
     correo: {
         type: String,
         required: true,
