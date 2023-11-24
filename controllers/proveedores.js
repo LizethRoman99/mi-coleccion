@@ -13,7 +13,7 @@ const getProveedores = async(req, res) =>{
 
 }
 const postProveedores = async(req, res) => {
-    const datos= req.query //capturar datos de la url de postman
+    const datos= req.body//capturar datos de la url de postman
     let mensaje='Insercion exitosa'
     try{
         const proveedor = new Proveedor(datos)//instaciar el objeto
