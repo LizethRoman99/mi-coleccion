@@ -1,6 +1,6 @@
-const{Shema, model}= require('mongoose')
+const{Schema, model}= require('mongoose')
 
-const ProveedorShema=({
+const ProveedorSchema=({
 
     id:{
         type:Number,
@@ -45,5 +45,5 @@ const ProveedorShema=({
 
 })
 //expesificando la estructura que va  a tener la conexion
-module.exports = model('Proveedores', ProveedorShema)
+module.exports = model('Proveedores', ProveedorSchema)
 
