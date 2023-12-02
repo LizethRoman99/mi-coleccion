@@ -42,10 +42,15 @@ const EmpleadoSchema=({
       },
       fechaNacimiento: {
         type: Date,
-        get: function (value) {
-            // 'this' se refiere al documento actual
-            return value ? value.toISOString().split('T')[0] : null;
-        },
+        set: function (value) {
+            // "value" es el valor proporcionado al intentar establecer la fecha de nacimiento
+            // Aquí puedes formatear la fecha antes de guardarla
+            const fecha = new Date(value);
+            const año = fecha.getFullYear();
+            const mes = ('0' + (fecha.getMonth() + 1)).slice(-2);
+            const dia = ('0' + fecha.getDate()).slice(-2);
+            return `${año}-${mes}-${dia}`;
+        }
     },
       fechaContratacion: {
         type: Date,
