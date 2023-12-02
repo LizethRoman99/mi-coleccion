@@ -42,6 +42,7 @@ const EmpleadoSchema=({
       },
       fechaNacimiento: {
         type: Date,
+        require:true,
       },
       fechaContratacion: {
         type: Date,
@@ -55,7 +56,12 @@ const EmpleadoSchema=({
       correo: {
         type: String,
         required: true,
-      }
+      },
+      estado:{
+        type:Boolean,
+        default:true,
+        required:true
+    }
 
 
 
