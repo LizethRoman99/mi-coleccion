@@ -42,8 +42,11 @@ const EmpleadoSchema=({
       },
       fechaNacimiento: {
         type: Date,
-        require:true,
-      },
+        get: function (value) {
+            // 'this' se refiere al documento actual
+            return value ? value.toISOString().split('T')[0] : null;
+        },
+    },
       fechaContratacion: {
         type: Date,
         default:Date.now
