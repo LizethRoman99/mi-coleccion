@@ -2,19 +2,14 @@ const{Schema, model}= require('mongoose')
 
 const ProveedorSchema=({
 
-    id:{
-        type:Number,
-        unique: true,
-        required: true,
-    },
-
     nombreProveedor: {
         type: String,
         required: true,
         
     },
     nit: {
-        type: Number,
+        type: String,
+        unique:true,
         required: true,
     },
     direccion: {
@@ -44,6 +39,6 @@ const ProveedorSchema=({
 
 
 })
-//expesificando la estructura que va  a tener la conexion
+//expecificando la estructura que va  a tener la conexion
 module.exports = model('Proveedores', ProveedorSchema)
 

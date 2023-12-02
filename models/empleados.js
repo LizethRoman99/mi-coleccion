@@ -1,19 +1,16 @@
-const{Shema, model}= require('mongoose')
+const{Schema, model}= require('mongoose')
 
-const EmpleadoShema=({
+const EmpleadoSchema=({
 
-    id: {
-        type: String,
-        required: true,
-        unique: true,
-      },
+  
       nombreCompleto: {
         type: String,
         required: true,
       },
-      Documento: {
+      documento: {
         type: Number,
         required: true,
+        unique:true
       },
       celular: {
         type: String,
@@ -41,10 +38,10 @@ const EmpleadoShema=({
       seguridadSocial: {
         type: String,
         required: true,
+        enum:['Sura','NuevaEps','Coomeva','Sanitas'],
       },
       fechaNacimiento: {
         type: Date,
-        required: true,
       },
       fechaContratacion: {
         type: Date,
@@ -53,6 +50,7 @@ const EmpleadoShema=({
       },
       fechaTerminacion: {
         type: Date,
+        require: true
       },
       correo: {
         type: String,
@@ -63,5 +61,5 @@ const EmpleadoShema=({
 
 })
 //expesificando la estructura que va  a tener la conexion
-module.exports = model('Empleados', EmpleadoShema)
+module.exports = model('Empleados', EmpleadoSchema)
 

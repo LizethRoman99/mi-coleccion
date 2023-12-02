@@ -34,10 +34,10 @@ const postEmpleados = async(req, res) => {
 
 
 const putEmpleados = async(req, res) =>{
-    const {id,nombreCompleto,Documento,celular,contraseña,confirmacionContraseña,seguridadSocial,fechaNacimiento,fechaContratacion,fechaTerminacion,correo}=req.body //desestructurar
+    const {nombreCompleto,documento,celular,contraseña,confirmacionContraseña,seguridadSocial,fechaNacimiento,fechaContratacion,fechaTerminacion,correo}=req.body //desestructurar
 
 try{
-        const empleado = await Empleado.findOneAndUpdate({id:id},{nombreCompleto:nombreCompleto,Documento:Documento,celular:celular,contraseña:contraseña,confirmacionContraseña:confirmacionContraseña,seguridadSocial:seguridadSocial,fechaNacimiento:fechaNacimiento,fechaContratacion:fechaContratacion,fechaTerminacion:fechaTerminacion,correo:correo})//las primeras llaves son el valor por el cual voy a hacer la modificacion el segundo hace referencia a lo que el usuario envio
+        const empleado = await Empleado.findOneAndUpdate({documento:documento},{nombreCompleto:nombreCompleto,celular:celular,contraseña:contraseña,confirmacionContraseña:confirmacionContraseña,seguridadSocial:seguridadSocial,fechaNacimiento:fechaNacimiento,fechaContratacion:fechaContratacion,fechaTerminacion:fechaTerminacion,correo:correo})//las primeras llaves son el valor por el cual voy a hacer la modificacion el segundo hace referencia a lo que el usuario envio
        
         mensaje = 'actualizacion exitosa'
         
@@ -51,10 +51,10 @@ try{
 }
    const deleteEmpleados = async(req, res) =>{
 
-    const { id}=req.query //desestructurar
+    const { documento}=req.query //desestructurar
 
     try{
-            const empleado = await Empleado.findOneAndDelete({id:id})//las primeras llaves son el valor por el cual voy a hacer la modificacion el segundo hace referencia a lo que el usuario envio
+            const empleado = await Empleado.findOneAndDelete({documento:documento})//las primeras llaves son el valor por el cual voy a hacer la modificacion el segundo hace referencia a lo que el usuario envio
             mensaje = 'Eliminacion Exitosa'
             
         }catch(error){
