@@ -35,30 +35,19 @@ const EmpleadoSchema=({
         },
       
       },
-      seguridadSocial: {
-        type: String,
-        required: true,
-        enum:['Sura','NuevaEps','Coomeva','Sanitas'],
-      },
+     
       fechaNacimiento: {
-        type: Date,
-        set: function (value) {
-            // "value" es el valor proporcionado al intentar establecer la fecha de nacimiento
-            // Aquí puedes formatear la fecha antes de guardarla
-            const fecha = new Date(value);
-            const año = fecha.getFullYear();
-            const mes = ('0' + (fecha.getMonth() + 1)).slice(-2);
-            const dia = ('0' + fecha.getDate()).slice(-2);
-            return `${año}-${mes}-${dia}`;
-        }
+        type: String,
+        require:true
+        
     },
       fechaContratacion: {
-        type: Date,
-        default:Date.now
+        type: String,
+        require: true
 
       },
       fechaTerminacion: {
-        type: Date,
+        type: String,
         require: true
       },
       correo: {
