@@ -34,6 +34,11 @@ const ProveedorSchema=({
         type:Boolean,
         default:true,
         required:true
+    },
+    precioDolar:{
+        type:Number
+        
+       
     }
 
 

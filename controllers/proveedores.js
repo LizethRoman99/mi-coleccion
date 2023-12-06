@@ -36,7 +36,7 @@ const postProveedores = async(req, res) => {
 
 const putProveedores = async(req, res) => {
     // console.log(req.body); // Imprime el cuerpo de la solicitud en la consola para verificar los campos
-    const { nombreProveedor, nit,direccion, correo, nombreContacto, numeroContacto, estado } = req.body;
+    const { nombreProveedor, nit,direccion, correo, nombreContacto, numeroContacto, estado,precioDolar } = req.body;
     let mensaje=''
     try {
         const proveedor = await Proveedor.findOneAndUpdate(
@@ -48,7 +48,8 @@ const putProveedores = async(req, res) => {
                 direccion: direccion,
                 nombreContacto: nombreContacto,
                 numeroContacto: numeroContacto,
-                estado: estado
+                estado: estado,
+                precioDolar:precioDolar
             }
         );
 
