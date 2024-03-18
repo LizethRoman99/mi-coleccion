@@ -66,7 +66,7 @@ const putProveedores = async(req, res) => {
 
 const deleteProveedores = async (req, res) => {
     try {
-        const { nit } = req.query; // Asegúrate de obtener el valor correctamente
+        const { nit } = req.body; // Asegúrate de obtener el valor correctamente
 
         const proveedor = await Proveedor.findOneAndDelete({ nit: nit });
         console.log('Proveedor eliminado:', proveedor);
