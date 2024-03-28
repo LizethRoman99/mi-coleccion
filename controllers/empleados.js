@@ -51,7 +51,7 @@ try{
 }
    const deleteEmpleados = async(req, res) =>{
 
-    const { documento}=req.query //desestructurar
+    const { documento}=req.body //desestructurar
 
     try{
             const empleado = await Empleado.findOneAndDelete({documento:documento})//las primeras llaves son el valor por el cual voy a hacer la modificacion el segundo hace referencia a lo que el usuario envio
