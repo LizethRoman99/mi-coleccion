@@ -8,7 +8,7 @@ const EmpleadoSchema=({
         required: true,
       },
       documento: {
-        type: Number,
+        type: String,
         required: true,
         unique:true
       },
