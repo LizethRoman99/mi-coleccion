@@ -18,14 +18,12 @@ const EmpleadoSchema=({
       },
       contraseña: {
         type: String,
-        required:[true, 'El password debe contener minimo 4 caracteres'],
         min:[4, 'El password debe contener minimo 4 caracteres'],
         max:[10, 'El password debe contener maximo 1o caracteres']
       },
       confirmacionContraseña: {
         type: String,
         type: String,
-        required: true,
         validate: {
           validator: function (value) {
             // 'this' se refiere al documento actual
@@ -43,12 +41,12 @@ const EmpleadoSchema=({
     },
       fechaContratacion: {
         type: String,
-        require: true
+       
 
       },
       fechaTerminacion: {
         type: String,
-        require: true
+       
       },
       correo: {
         type: String,
@@ -57,7 +55,7 @@ const EmpleadoSchema=({
       estado:{
         type:Boolean,
         default:true,
-        required:true
+       
     }
 
 
