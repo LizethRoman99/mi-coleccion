@@ -32,7 +32,7 @@ const ProveedorSchema=({
     },
     grupoSanguineo{
        type:String,
-       required: true
+       required: true,
     },
     estado:{
         type:Boolean,
