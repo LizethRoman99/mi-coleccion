@@ -30,8 +30,8 @@ const ProveedorSchema=({
         required: true,
 
     },
-    grupoSanguineo{
-       type:String,
+    grupoSanguineo: {
+       type: String,
        required: true,
     },
     estado:{
