@@ -40,9 +40,6 @@ const ProveedorSchema=({
         required:true
     },
    
-
-
-
 })
 //expecificando la estructura que va  a tener la conexion
 module.exports = model('Proveedores', ProveedorSchema)
