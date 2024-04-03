@@ -37,7 +37,7 @@ const ProveedorSchema=({
     estado:{
         type:Boolean,
         default:true,
-        required:true
+
     },
    
 })
